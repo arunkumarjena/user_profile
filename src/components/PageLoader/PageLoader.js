@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 
-import Spinner from "../Spinner/Spinner";
-import "./PageLoader.css";
+import Spinner from "../Spinner";
+import "../PageLoader/PageLoader.css";
 
 const PageLoader = () => {
     return (
