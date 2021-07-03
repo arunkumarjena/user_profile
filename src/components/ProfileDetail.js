@@ -4,10 +4,12 @@ import axios from "axios";
 import { useDispatch, useSelector } from 'react-redux';
 import { selectedProfiles, removeSelectedProfiles } from '../redux/actions/userProfileAction';
 
+
 const ProfileDetail = () => {
     const { id } = useParams();
     let profile = useSelector((state) => state.profile);
     const { first_name, last_name, avatar, email } = profile;
+
     const dispatch = useDispatch();
     // console.log(id);
     const fetchProfileDetails = async (id) => {
@@ -16,6 +18,7 @@ const ProfileDetail = () => {
         });
 
         dispatch(selectedProfiles(response.data.data));
+
         // console.log(response.data);
     };
 

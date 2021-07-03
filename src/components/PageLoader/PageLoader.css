@@ -9,7 +9,8 @@
 }
 
 .loader {
-    left: 50%;
-    top: 50%;
-    position: absolute;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

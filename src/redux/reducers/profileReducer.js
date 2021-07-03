@@ -22,3 +22,17 @@ export const selectedProfileReducer = (state = {}, { type, payload }) => {
             return state;
     }
 };
+
+export const personReducer = (state = {}, {type, payload}) => {
+console.log(type)
+  switch (type) {
+    case ActionTypes.FILTER_PROFILE_BY_NAME:
+      return {
+        ...state,
+        name: type.payload.name,
+        filterdUsers: type.payload.users,
+      };
+      default:
+        return state;
+  }
+};

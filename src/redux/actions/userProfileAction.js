@@ -19,3 +19,16 @@ export const removeSelectedProfiles = () =>{
         type: ActionTypes.REMOVE_SELECTED_PROFILES
     };
 };
+
+export const filterUsers = (profiles, name) => (dispatch) => {
+  dispatch({
+    type: ActionTypes.FILTER_PROFILE_BY_NAME,
+    payload: {
+      name: name,
+      users:
+        name === ""
+          ? profiles
+          : profiles.filter((x) => x.availableUsers.indexOf(name) >= 0),
+    },
+  });
+};

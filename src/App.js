@@ -1,4 +1,4 @@
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProfilesList from "./components/ProfilesList";
 import ProfileDetail from "./components/ProfileDetail";
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
+        {/* <Header /> */}
         {/* <Loader/> */}
         <Switch>
           <Route path="/" exact component={ProfilesList} />
