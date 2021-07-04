@@ -6,6 +6,10 @@ export const profilesReducer = (state = initialState, { type, payload }) => {
     switch (type) {
         case ActionTypes.SET_PROFILES:
             return { ...state, ...payload };
+            
+            
+            case ActionTypes.SORT_BY_NAME:
+            return { ...state, data: payload };
         default:
             return state;
     }

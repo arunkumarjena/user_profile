@@ -12,13 +12,14 @@ const ProfilesList = () => {
     const [loading, setLoading] = useState(null);
     // from apis
     const fetchProfiles = async () => {
+        setLoading(true);
         const response = await axios
         .get("https://reqres.in/api/users?delay=3")
         .catch((err) => {
             console.log("Err", err);
         });
         dispatch(setProfiles(response.data));
-        setLoading(true);
+        setLoading(false);
     };
     
     useEffect(() => {
@@ -27,8 +28,12 @@ const ProfilesList = () => {
     
     return (
         <div className="ui grid container">
-            {loading ? <ProfileComponent/> : (
-                <PageLoader/>
+            {!loading ? <ProfileComponent/> : (
+                <div className="ui container">
+                    <div className="ui center aligned container">
+                        <PageLoader/>
+                    </div>
+                </div>
             )}
             
         </div>
